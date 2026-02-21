@@ -2,10 +2,10 @@
 
 ## Docker Hub Repository
 
-https://hub.docker.com/repository/docker/a1exic/litvinov/general
+https://hub.docker.com/repository/docker/a1exic/todoapp
 
-Docker image tag:
-<your-dockerhub-username>/todoapp:1.0.0
+Image:
+a1exic/todoapp:1.0.0
 
 ---
 
@@ -19,39 +19,33 @@ docker login
 
 docker build -t todoapp:1.0.0 .
 
-## 3. Tag the image for Docker Hub
+## 3. Tag the image
 
-docker tag todoapp:1.0.0 <a1exic/litvinov>/todoapp:1.0.0
+docker tag todoapp:1.0.0 a1exic/todoapp:1.0.0
 
-## 4. Push the image to Docker Hub
+## 4. Push to Docker Hub
 
-docker push <a1exic/litvinov>/todoapp:1.0.0
-
----
-
-# Run the application
-
-## Option 1: Run locally built image
-
-docker run -p 8080:8080 todoapp:1.0.0
-
-## Option 2: Run image directly from Docker Hub
-
-docker run -p 8080:8080 <a1exic/litvinov>/todoapp:1.0.0
+docker push a1exic/todoapp:1.0.0
 
 ---
 
-# Access the Application
+# Run from Docker Hub
 
-After running the container with:
+docker run -p 8080:8080 a1exic/todoapp:1.0.0
 
-docker run -p 8080:8080 <a1exic/litvinov>/todoapp:1.0.0
+---
 
-Open a browser and navigate to:
+# Access Application
+
+After running the container:
+
+docker run -p 8080:8080 a1exic/todoapp:1.0.0
+
+Open in browser:
 
 http://localhost:8080
 
-If running on a remote machine, open:
+If running on remote host:
 
 http://<host-ip>:8080
 
@@ -59,8 +53,11 @@ http://<host-ip>:8080
 
 # Verification
 
-The application starts inside the container without errors.
-Database migrations are executed during image build.
-The server runs on:
+Docker Hub image:
+a1exic/todoapp:1.0.0
 
-0.0.0.0:8080
+Pull test command:
+docker pull a1exic/todoapp:1.0.0
+
+PR URL:
+https://github.com/mate-academy/devops_todolist/pull/260
